@@ -2,112 +2,62 @@
 <html>
 <head>
   <title>ANISH X PANEL</title>
-  <style>
-    body {
-      font-family: Arial;
-      background: #0f172a;
-      color: white;
-      text-align: center;
-      margin: 0;
-    }
-
-    h1 {
-      background: #020617;
-      padding: 15px;
-      margin: 0;
-    }
-
-    .container {
-      padding: 15px;
-    }
-
-    .card {
-      background: #1e293b;
-      margin: 15px 0;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px black;
-    }
-
-    .qr {
-      margin: 20px 0;
-    }
-
-    .qr img {
-      width: 200px;
-      border-radius: 10px;
-    }
-
-    button {
-      padding: 12px 20px;
-      background: #22c55e;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    button:hover {
-      background: #16a34a;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
+<body style="background:#0f172a; color:white; text-align:center; font-family:Arial;">
 
 <h1>ANISH X PANEL</h1>
 
-<div class="container">
+<p>Select Product → Pay → Send Screenshot</p>
 
-  <p>Scan QR & Pay → Then send screenshot on WhatsApp</p>
+<!-- QR IMAGE -->
+<img src="qr.png" width="200"><br><br>
 
-  <div class="qr">
-    <img src="qr.png" alt="QR Code">
-  </div>
+<!-- PRODUCT SELECT -->
+<select id="product" style="padding:10px; font-size:16px;">
+  <option value="">Select Product</option>
+  <option>REAPER X PRO - 10 Day ₹690</option>
+  <option>REAPER X PRO - 30 Day ₹1450</option>
+  <option>DRIP CLIENT - 1 Day ₹75</option>
+  <option>DRIP CLIENT - 7 Day ₹320</option>
+  <option>DRIP CLIENT - 15 Day ₹610</option>
+  <option>HG CHEATS - 10 Day ₹450</option>
+  <option>PATO TEAM - 3 Day ₹310</option>
+  <option>HAXX CKER PRO - 10 Day ₹860</option>
+  <option>HAXX CKER PRO - 30 Day ₹1250</option>
+  <option>Fluorite FF iOS - 1 Day ₹390</option>
+  <option>Fluorite FF iOS - 7 Day ₹980</option>
+  <option>Fluorite FF iOS - 31 Day ₹1799</option>
+  <option>BR MODE ROOT - 1 Day ₹70</option>
+  <option>BR MODE ROOT - 7 Day ₹210</option>
+  <option>BR MODE ROOT - 15 Day ₹350</option>
+  <option>BR MODE ROOT - 30 Day ₹500</option>
+</select>
 
-  <div class="card">
-    <h2>REAPER X PRO</h2>
-    <p>10 Day - ₹690 | 30 Day - ₹1450</p>
-  </div>
+<br><br>
 
-  <div class="card">
-    <h2>DRIP CLIENT</h2>
-    <p>1 Day - ₹75 | 7 Day - ₹320 | 15 Day - ₹610</p>
-  </div>
+<!-- BUTTON -->
+<button onclick="sendWhatsApp()" 
+style="padding:12px; background:#22c55e; color:white; border:none; border-radius:5px; font-size:16px;">
+Pay & Send Screenshot
+</button>
 
-  <div class="card">
-    <h2>HG CHEATS</h2>
-    <p>10 Day - ₹450</p>
-  </div>
+<script>
+function sendWhatsApp() {
+  var product = document.getElementById("product").value;
 
-  <div class="card">
-    <h2>PATO TEAM</h2>
-    <p>3 Day - ₹310</p>
-  </div>
+  if(product === "") {
+    alert("Please select a product!");
+    return;
+  }
 
-  <div class="card">
-    <h2>HAXX CKER PRO (ROOT)</h2>
-    <p>10 Day - ₹860 | 30 Day - ₹1250</p>
-  </div>
+  var message = "Hello, I have paid for: " + product;
+  var url = "https://wa.me/919546193795?text=" + encodeURIComponent(message);
 
-  <div class="card">
-    <h2>Fluorite FF iOS</h2>
-    <p>1 Day - ₹390 | 7 Day - ₹980 | 31 Day - ₹1799</p>
-  </div>
-
-  <div class="card">
-    <h2>BR MODE ROOT</h2>
-    <p>1 Day - ₹70 | 7 Day - ₹210 | 15 Day - ₹350 | 30 Day - ₹500</p>
-  </div>
-
-  <br>
-
-  <a href="https://wa.me/919546193795?text=Hello%20I%20have%20paid%20please%20confirm">
-    <button>Send Payment Screenshot</button>
-  </a>
-
-</div>
+  window.open(url, "_blank");
+}
+</script>
 
 </body>
 </html>
