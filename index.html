@@ -8,118 +8,120 @@
 body{
   margin:0;
   font-family:Arial;
+  background:black;
   color:white;
   text-align:center;
-  background:url('bg.jpg') no-repeat center;
-  background-size:cover;
 }
-body::before{
-  content:"";
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.75);
-  z-index:-1;
-}
-.container{padding:20px;}
 
-/* BRAND */
-.brand-box{
-  margin:20px auto;
+/* RGB BOX */
+@keyframes rgbGlow{
+0%{box-shadow:0 0 20px red;}
+25%{box-shadow:0 0 25px blue;}
+50%{box-shadow:0 0 25px cyan;}
+75%{box-shadow:0 0 25px magenta;}
+100%{box-shadow:0 0 30px lime;}
+}
+
+/* RGB TEXT */
+@keyframes rgbText{
+0%{background-position:0%;}
+100%{background-position:400%;}
+}
+
+.box{
+  margin:20px;
   padding:20px;
-  max-width:400px;
   border-radius:20px;
-  background:rgba(0,0,0,0.8);
-  animation:glowBox 4s infinite linear;
+  background:#111;
+  animation:rgbGlow 4s infinite linear;
 }
-@keyframes glowBox{
-  0%{box-shadow:0 0 15px red;}
-  25%{box-shadow:0 0 20px blue;}
-  50%{box-shadow:0 0 25px pink;}
-  75%{box-shadow:0 0 25px purple;}
-  100%{box-shadow:0 0 30px gold;}
-}
+
 .brand{
   font-size:28px;
   font-weight:bold;
-  background:linear-gradient(90deg,gold,red,blue,pink,purple,gold);
+  background:linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, violet, red);
   background-size:400%;
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  animation:shine 5s linear infinite;
-}
-@keyframes shine{
-  0%{background-position:0%;}
-  100%{background-position:400%;}
-}
-
-/* BOX */
-.box{
-  margin:20px auto;
-  padding:15px;
-  max-width:400px;
-  border-radius:15px;
-  background:rgba(0,0,0,0.75);
-  animation:glow 4s infinite linear;
-}
-@keyframes glow{
-  0%{box-shadow:0 0 10px red;}
-  25%{box-shadow:0 0 15px blue;}
-  50%{box-shadow:0 0 20px pink;}
-  75%{box-shadow:0 0 20px purple;}
-  100%{box-shadow:0 0 25px gold;}
+  animation:rgbText 5s linear infinite;
 }
 
 select,button{
   width:90%;
   padding:12px;
-  border-radius:8px;
-}
-button{
-  background:green;
-  color:white;
+  border-radius:10px;
+  border:none;
   margin-top:10px;
 }
 
-/* INSTAGRAM */
-.insta-box{
-  margin:25px auto;
-  max-width:300px;
-  padding:15px;
-  border-radius:15px;
-  background:linear-gradient(45deg,#ff0066,#ffcc00);
-  animation:glow 4s infinite linear;
-}
-.insta-box a{
-  text-decoration:none;
+button{
+  background:linear-gradient(90deg,green,lime);
   color:white;
   font-weight:bold;
 }
 
-/* TRUST */
-.trust-box{
-  margin:20px auto;
-  max-width:350px;
+.telegram{
+  display:block;
+  margin:20px;
   padding:15px;
-  border-radius:15px;
-  background:rgba(0,0,0,0.8);
-  animation:glow 4s infinite linear;
+  border-radius:20px;
+  background:linear-gradient(90deg, red, orange, yellow, green, blue, purple);
+  font-weight:bold;
+  text-decoration:none;
+  color:white;
 }
 
-.qr{width:200px;background:white;border-radius:10px;}
+.trust{
+  margin:20px;
+  padding:15px;
+  border-radius:20px;
+  background:#111;
+  animation:rgbGlow 4s infinite linear;
+}
+
+.trust span{
+  background:linear-gradient(90deg, red, yellow, lime, cyan, blue, pink, red);
+  background-size:400%;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:rgbText 5s linear infinite;
+  font-weight:bold;
+}
+
+.ai-box{
+  margin:20px;
+  padding:10px;
+  background:#000;
+  border-radius:15px;
+  height:220px;
+  animation:rgbGlow 4s infinite linear;
+}
+
+#chat{
+  height:150px;
+  overflow-y:auto;
+  text-align:left;
+  font-size:14px;
+}
+
+#userInput{
+  width:90%;
+  padding:10px;
+  border-radius:10px;
+  border:none;
+}
 </style>
 </head>
 
 <body>
-<div class="container">
 
-<div class="brand-box">
-<h1 class="brand">👑 ANISH X PANEL</h1>
+<div class="box">
+<h1 class="brand"> 🔱 ANISH X PANEL ️☠ </h1>
 </div>
 
 <div class="box">
 <h3>SCAN & PAY</h3>
-<img src="qr.png" class="qr">
+<img src="qr.png" width="200">
 <p>UPI: anishxpanel@upi</p>
 </div>
 
@@ -127,61 +129,59 @@ button{
 <h3>SELECT PRODUCT</h3>
 
 <select id="product" onchange="updatePrice()">
+
 <option value="">Select Product</option>
 
-<!-- NON ROOT -->
 <option disabled>--- NON ROOT DEVICE ---</option>
-<option value="79">Drip Client - 1 Day</option>
-<option value="350">Drip Client - 7 Days</option>
-<option value="680">Drip Client - 15 Days</option>
-<option value="999">Drip Client - 30 Days</option>
+<option value="75">Drip Client - 1 Day</option>
+<option value="300">Drip Client - 7 Days</option>
+<option value="610">Drip Client - 15 Days</option>
+<option value="850">Drip Client - 30 Days</option>
 
-<option value="130">HG Cheats - 1 Day</option>
-<option value="450">HG Cheats - 10 Days</option>
-<option value="1100">HG Cheats - 30 Days</option>
+<option value="150">HG Cheats - 1 Day</option>
+<option value="380">HG Cheats - 10 Days</option>
+<option value="999">HG Cheats - 30 Days</option>
 
-<option value="100">Prime Hook - 1 Day</option>
-<option value="180">Prime Hook - 3 Days</option>
-<option value="320">Prime Hook - 7 Days</option>
-<option value="400">Prime Hook - 10 Days</option>
-<option value="1280">Prime Hook - 30 Days</option>
+<option value="350">Prime Hook - 7 Days</option>
+<option value="520">Prime Hook - 10 Days</option>
 
-<option value="550">Pato Safe - 3 Days</option>
-<option value="700">Pato Safe - 7 Days</option>
+<option value="350">Pato Safe - 3 Days</option>
+<option value="480">Pato Safe - 7 Days</option>
 
-<option value="450">Pato Brutal - 3 Days</option>
-<option value="750">Pato Brutal - 7 Days</option>
+<option value="390">Pato Brutal - 3 Days</option>
+<option value="650">Pato Brutal - 7 Days</option>
 
-<!-- ROOT -->
 <option disabled>--- ROOT + VPHONE ---</option>
-<option value="150">Haxx Cker - 3 Days</option>
-<option value="300">Haxx Cker - 7 Days</option>
-<option value="550">Haxx Cker - 15 Days</option>
-<option value="750">Haxx Cker - 10 Days</option>
-<option value="1100">Haxx Cker - 20 Days</option>
-<option value="1650">Haxx Cker - 30 Days</option>
-<option value="999">Haxx Cker - 30 Days Alt</option>
+<option value="750">Haxx Cker Pro - 10 Days</option>
+<option value="1100">Haxx Cker Pro - 20 Days</option>
+<option value="1650">Haxx Cker Pro - 30 Days</option>
 
-<option value="700">BR Mode - 10 Days</option>
-<option value="1180">BR Mode - 20 Days</option>
-<option value="1640">BR Mode - 30 Days</option>
+<option value="110">HG Cheats Root - 1 Day</option>
+<option value="380">HG Cheats Root - 10 Days</option>
+<option value="1150">HG Cheats Root - 30 Days</option>
 
-<!-- IOS -->
+<option value="750">BR Mode - 10 Days</option>
+<option value="1250">BR Mode - 20 Days</option>
+<option value="1650">BR Mode - 30 Days</option>
+
+<option value="850">XYZ - 10 Days</option>
+<option value="1380">XYZ - 20 Days</option>
+<option value="1860">XYZ - 30 Days</option>
+
 <option disabled>--- IOS PANEL ---</option>
-<option value="420">Fluorite - 1 Day</option>
-<option value="1250">Fluorite - 7 Days</option>
+<option value="480">Fluorite - 1 Day</option>
+<option value="999">Fluorite - 7 Days</option>
 <option value="1900">Fluorite - 30 Days</option>
 
-<option value="500">Gbox - 30 Days</option>
+<option value="680">Gbox - 1 Year Warranty</option>
 
-<option value="999">Total iOS - 1 Day</option>
-<option value="1710">Total iOS - 7 Days</option>
-<option value="2510">Total iOS - 30 Days</option>
+<option value="1100">Total iOS - 1 Day</option>
+<option value="1900">Total iOS - 7 Days</option>
+<option value="2900">Total iOS - 30 Days</option>
 
-<!-- PC -->
 <option disabled>--- PC PANEL ---</option>
-<option value="150">Terminal X - 1 Day</option>
-<option value="700">Terminal X - 10 Days</option>
+<option value="120">Terminal X - 1 Day</option>
+<option value="650">Terminal X - 10 Days</option>
 <option value="1600">Terminal X - 30 Days</option>
 
 </select>
@@ -192,23 +192,28 @@ button{
 <button onclick="sendWhatsApp()">Pay & Send Screenshot</button>
 </div>
 
-<!-- INSTAGRAM -->
-<div class="insta-box">
-<a href="https://instagram.com/mr_shetty_47_" target="_blank">
-📸 FOLLOW ON INSTAGRAM  
-<br>@mr_shetty_47_
+<!-- TELEGRAM FIXED -->
+<a href="https://t.me/Anishxpenal" target="_blank" class="telegram">
+ 💬
+️JOIN TELEGRAM
+🗨️ <br>
+@Anishxpenal
 </a>
-</div>
 
-<!-- TRUST -->
-<div class="trust-box">
+<div class="trust">
+<span>
 ✔ FULL TRUSTED SELLER<br>
 ✔ 24/7 SUPPORT<br>
 ✔ INSTANT DELIVERY<br>
 ✔ SAFE PAYMENT<br>
 ✔ FAST RESPONSE
+</span>
 </div>
 
+<!-- AI -->
+<div class="ai-box">
+<div id="chat"></div>
+<input type="text" id="userInput" placeholder="Ask..." onkeypress="if(event.key==='Enter') sendMsg()">
 </div>
 
 <script>
@@ -216,7 +221,8 @@ let orderID="AXP"+Math.floor(Math.random()*1000000000);
 document.getElementById("orderid").innerHTML="Order ID: "+orderID;
 
 function updatePrice(){
-document.getElementById("price").innerHTML="Price: ₹"+document.getElementById("product").value;
+let p=document.getElementById("product");
+document.getElementById("price").innerHTML="Price: ₹"+p.value;
 }
 
 function sendWhatsApp(){
@@ -228,6 +234,46 @@ if(price===""){alert("Select product");return;}
 
 let msg="Order ID: "+orderID+"%0AProduct: "+name+"%0AAmount: ₹"+price;
 window.open("https://wa.me/919546193795?text="+msg);
+}
+
+/* 🔥 ADVANCED AI */
+function sendMsg(){
+let input=document.getElementById("userInput");
+let chat=document.getElementById("chat");
+
+let text=input.value.toLowerCase();
+if(text==="") return;
+
+chat.innerHTML += "<div>🧑: "+text+"</div>";
+
+let reply="🤖 Samajh nahi aaya 😅";
+
+if(text.includes("hi") || text.includes("hello") || text.includes("hey")){
+reply="👋 Hello bhai!\n🎮 Game me se preshan ho?\n😎 Tension mat le, sab theek kar dunga!";
+}
+else if(text.includes("price") || text.includes("kitna")){
+reply="💰 Product select karo, price auto dikhega 👍";
+}
+else if(text.includes("buy") || text.includes("kaise")){
+reply="🛒 Steps:\n1. Product select\n2. Payment\n3. Screenshot WhatsApp pe bhejo";
+}
+else if(text.includes("safe") || text.includes("best")){
+reply="🔥 Sabse safe: Haxx Cker Pro\n⚡ Best: Pato Brutal";
+}
+else if(text.includes("drip")){
+reply="📦 Drip Client available hai — smooth gameplay 👍";
+}
+else if(text.includes("hg")){
+reply="📦 HG Cheats safe aur popular hai 🔥";
+}
+else if(text.includes("haxx")){
+reply="👑 Haxx Cker Pro = Main ID Safe 💯";
+}
+
+chat.innerHTML += "<div>🤖: "+reply+"</div>";
+
+input.value="";
+chat.scrollTop=chat.scrollHeight;
 }
 </script>
 
