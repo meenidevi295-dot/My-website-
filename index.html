@@ -13,7 +13,6 @@ body{
   text-align:center;
 }
 
-/* RGB BOX */
 @keyframes rgbGlow{
 0%{box-shadow:0 0 20px red;}
 25%{box-shadow:0 0 25px blue;}
@@ -22,7 +21,6 @@ body{
 100%{box-shadow:0 0 30px lime;}
 }
 
-/* RGB TEXT */
 @keyframes rgbText{
 0%{background-position:0%;}
 100%{background-position:400%;}
@@ -93,12 +91,12 @@ button{
   padding:10px;
   background:#000;
   border-radius:15px;
-  height:220px;
+  height:260px;
   animation:rgbGlow 4s infinite linear;
 }
 
 #chat{
-  height:150px;
+  height:180px;
   overflow-y:auto;
   text-align:left;
   font-size:14px;
@@ -116,7 +114,7 @@ button{
 <body>
 
 <div class="box">
-<h1 class="brand"> 🔱 ANISH X PANEL ️☠ </h1>
+<h1 class="brand">🐉 ANISH X PANEL</h1>
 </div>
 
 <div class="box">
@@ -125,65 +123,72 @@ button{
 <p>UPI: anishxpanel@upi</p>
 </div>
 
+<!-- HOW TO BUY -->
+<div class="box">
+<h3>📺 HOW TO BUY</h3>
+<p>👉 Step by step video guide</p>
+<a href="https://whatsapp.com/channel/0029Vb7pN9XLI8YfIEJhrY2h/110" target="_blank">
+<button>▶ WATCH VIDEO GUIDE</button>
+</a>
+</div>
+
 <div class="box">
 <h3>SELECT PRODUCT</h3>
 
 <select id="product" onchange="updatePrice()">
-
 <option value="">Select Product</option>
 
-<option disabled>--- NON ROOT DEVICE ---</option>
-<option value="75">Drip Client - 1 Day</option>
-<option value="300">Drip Client - 7 Days</option>
-<option value="610">Drip Client - 15 Days</option>
-<option value="850">Drip Client - 30 Days</option>
+<option disabled>--- NON ROOT ---</option>
+<option>Drip Client - 1 Day</option>
+<option>Drip Client - 7 Days</option>
+<option>Drip Client - 15 Days</option>
+<option>Drip Client - 30 Days</option>
 
-<option value="150">HG Cheats - 1 Day</option>
-<option value="380">HG Cheats - 10 Days</option>
-<option value="999">HG Cheats - 30 Days</option>
+<option>HG Cheats - 1 Day</option>
+<option>HG Cheats - 10 Days</option>
+<option>HG Cheats - 30 Days</option>
 
-<option value="350">Prime Hook - 7 Days</option>
-<option value="520">Prime Hook - 10 Days</option>
+<option>Prime Hook - 7 Days</option>
+<option>Prime Hook - 10 Days</option>
 
-<option value="350">Pato Safe - 3 Days</option>
-<option value="480">Pato Safe - 7 Days</option>
+<option>Pato Safe - 3 Days</option>
+<option>Pato Safe - 7 Days</option>
 
-<option value="390">Pato Brutal - 3 Days</option>
-<option value="650">Pato Brutal - 7 Days</option>
+<option>Pato Brutal - 3 Days</option>
+<option>Pato Brutal - 7 Days</option>
 
-<option disabled>--- ROOT + VPHONE ---</option>
-<option value="750">Haxx Cker Pro - 10 Days</option>
-<option value="1100">Haxx Cker Pro - 20 Days</option>
-<option value="1650">Haxx Cker Pro - 30 Days</option>
+<option disabled>--- ROOT ---</option>
+<option>Haxx Cker Pro - 10 Days</option>
+<option>Haxx Cker Pro - 20 Days</option>
+<option>Haxx Cker Pro - 30 Days</option>
 
-<option value="110">HG Cheats Root - 1 Day</option>
-<option value="380">HG Cheats Root - 10 Days</option>
-<option value="1150">HG Cheats Root - 30 Days</option>
+<option>HG Cheats Root - 1 Day</option>
+<option>HG Cheats Root - 10 Days</option>
+<option>HG Cheats Root - 30 Days</option>
 
-<option value="750">BR Mode - 10 Days</option>
-<option value="1250">BR Mode - 20 Days</option>
-<option value="1650">BR Mode - 30 Days</option>
+<option>BR Mode - 10 Days</option>
+<option>BR Mode - 20 Days</option>
+<option>BR Mode - 30 Days</option>
 
-<option value="850">XYZ - 10 Days</option>
-<option value="1380">XYZ - 20 Days</option>
-<option value="1860">XYZ - 30 Days</option>
+<option>XYZ - 10 Days</option>
+<option>XYZ - 20 Days</option>
+<option>XYZ - 30 Days</option>
 
-<option disabled>--- IOS PANEL ---</option>
-<option value="480">Fluorite - 1 Day</option>
-<option value="999">Fluorite - 7 Days</option>
-<option value="1900">Fluorite - 30 Days</option>
+<option disabled>--- IOS ---</option>
+<option>Fluorite - 1 Day</option>
+<option>Fluorite - 7 Days</option>
+<option>Fluorite - 30 Days</option>
 
-<option value="680">Gbox - 1 Year Warranty</option>
+<option>Gbox - 1 Year Warranty</option>
 
-<option value="1100">Total iOS - 1 Day</option>
-<option value="1900">Total iOS - 7 Days</option>
-<option value="2900">Total iOS - 30 Days</option>
+<option>Total iOS - 1 Day</option>
+<option>Total iOS - 7 Days</option>
+<option>Total iOS - 30 Days</option>
 
-<option disabled>--- PC PANEL ---</option>
-<option value="120">Terminal X - 1 Day</option>
-<option value="650">Terminal X - 10 Days</option>
-<option value="1600">Terminal X - 30 Days</option>
-
+<option disabled>--- PC ---</option>
+<option>Terminal X - 1 Day</option>
+<option>Terminal X - 10 Days</option>
+<option>Terminal X - 30 Days</option>
 </select>
 
 <div id="price">Price: ₹0</div>
@@ -192,12 +197,8 @@ button{
 <button onclick="sendWhatsApp()">Pay & Send Screenshot</button>
 </div>
 
-<!-- TELEGRAM FIXED -->
 <a href="https://t.me/Anishxpenal" target="_blank" class="telegram">
- 💬
-️JOIN TELEGRAM
-🗨️ <br>
-@Anishxpenal
+📢 JOIN TELEGRAM <br>@Anishxpenal
 </a>
 
 <div class="trust">
@@ -220,58 +221,65 @@ button{
 let orderID="AXP"+Math.floor(Math.random()*1000000000);
 document.getElementById("orderid").innerHTML="Order ID: "+orderID;
 
+/* 🔒 PRICE LOCK */
+const priceDB={
+"Drip Client - 1 Day":75,"Drip Client - 7 Days":300,"Drip Client - 15 Days":610,"Drip Client - 30 Days":850,
+"HG Cheats - 1 Day":150,"HG Cheats - 10 Days":380,"HG Cheats - 30 Days":999,
+"Prime Hook - 7 Days":350,"Prime Hook - 10 Days":520,
+"Pato Safe - 3 Days":350,"Pato Safe - 7 Days":480,
+"Pato Brutal - 3 Days":390,"Pato Brutal - 7 Days":650,
+"Haxx Cker Pro - 10 Days":750,"Haxx Cker Pro - 20 Days":1100,"Haxx Cker Pro - 30 Days":1650,
+"HG Cheats Root - 1 Day":110,"HG Cheats Root - 10 Days":380,"HG Cheats Root - 30 Days":1150,
+"BR Mode - 10 Days":750,"BR Mode - 20 Days":1250,"BR Mode - 30 Days":1650,
+"XYZ - 10 Days":850,"XYZ - 20 Days":1380,"XYZ - 30 Days":1860,
+"Fluorite - 1 Day":480,"Fluorite - 7 Days":999,"Fluorite - 30 Days":1900,
+"Gbox - 1 Year Warranty":680,
+"Total iOS - 1 Day":1100,"Total iOS - 7 Days":1900,"Total iOS - 30 Days":2900,
+"Terminal X - 1 Day":120,"Terminal X - 10 Days":650,"Terminal X - 30 Days":1600
+};
+
 function updatePrice(){
 let p=document.getElementById("product");
-document.getElementById("price").innerHTML="Price: ₹"+p.value;
+let name=p.options[p.selectedIndex].text;
+document.getElementById("price").innerHTML="Price: ₹"+(priceDB[name]||0);
 }
 
 function sendWhatsApp(){
 let p=document.getElementById("product");
 let name=p.options[p.selectedIndex].text;
-let price=p.value;
-
-if(price===""){alert("Select product");return;}
-
+let price=priceDB[name];
+if(!price){alert("Select product");return;}
 let msg="Order ID: "+orderID+"%0AProduct: "+name+"%0AAmount: ₹"+price;
 window.open("https://wa.me/919546193795?text="+msg);
 }
 
-/* 🔥 ADVANCED AI */
+/* 🤖 ADVANCED AI */
 function sendMsg(){
 let input=document.getElementById("userInput");
 let chat=document.getElementById("chat");
+let text=input.value.toLowerCase().trim();
+if(!text) return;
 
-let text=input.value.toLowerCase();
-if(text==="") return;
+chat.innerHTML+="<div>🧑: "+text+"</div>";
+let r="🤖 Samajh nahi aaya 😅";
 
-chat.innerHTML += "<div>🧑: "+text+"</div>";
-
-let reply="🤖 Samajh nahi aaya 😅";
-
-if(text.includes("hi") || text.includes("hello") || text.includes("hey")){
-reply="👋 Hello bhai!\n🎮 Game me se preshan ho?\n😎 Tension mat le, sab theek kar dunga!";
+if(text.includes("hi")||text.includes("hello")||text.includes("hey")){
+r="👋 Hello bhai! Game me problem hai? 😎 Main help karunga!";
 }
-else if(text.includes("price") || text.includes("kitna")){
-reply="💰 Product select karo, price auto dikhega 👍";
+else if(text.includes("price")||text.includes("kitna")){
+r="💰 Product select karo, price niche dikhega 👍";
 }
-else if(text.includes("buy") || text.includes("kaise")){
-reply="🛒 Steps:\n1. Product select\n2. Payment\n3. Screenshot WhatsApp pe bhejo";
+else if(text.includes("buy")||text.includes("kaise")){
+r="🛒 1. Product select\n2. Payment karo\n3. Screenshot WhatsApp pe bhejo";
 }
-else if(text.includes("safe") || text.includes("best")){
-reply="🔥 Sabse safe: Haxx Cker Pro\n⚡ Best: Pato Brutal";
+else if(text.includes("safe")){
+r="🔒 Sabse safe: Haxx Cker Pro";
 }
-else if(text.includes("drip")){
-reply="📦 Drip Client available hai — smooth gameplay 👍";
-}
-else if(text.includes("hg")){
-reply="📦 HG Cheats safe aur popular hai 🔥";
-}
-else if(text.includes("haxx")){
-reply="👑 Haxx Cker Pro = Main ID Safe 💯";
+else if(text.includes("best")){
+r="🔥 Best: Pato Brutal / Haxx";
 }
 
-chat.innerHTML += "<div>🤖: "+reply+"</div>";
-
+chat.innerHTML+="<div>🤖: "+r+"</div>";
 input.value="";
 chat.scrollTop=chat.scrollHeight;
 }
